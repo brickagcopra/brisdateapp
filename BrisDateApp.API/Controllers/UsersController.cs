@@ -5,11 +5,13 @@ using System.Threading.Tasks;
 using AutoMapper;
 using BrisDateApp.API.Data;
 using BrisDateApp.API.Dtos;
+using BrisDateApp.API.Helpers;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace BrisDateApp.API.Controllers
 {
+    [ServiceFilter(typeof(LogUserActivity))]
     [Authorize]
     [Route("api/[controller]")]
     [ApiController]
